@@ -1,8 +1,8 @@
-﻿using ReCapProject.Business;
-using ReCapProject.DataAccess;
+﻿using Business.Concrete;
+using Concrete.InMemory;
 using System;
 
-namespace ReCapProject
+namespace ReCapProject.ConsoleUI
 {
     class Program
     {
@@ -14,7 +14,6 @@ namespace ReCapProject
             {
                 Console.WriteLine(car.Description);
             }
-
 
             Console.ReadLine();
         }

@@ -1,11 +1,13 @@
-﻿using ReCapProject.Entities;
+﻿using DataAccess.Abstract;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReCapProject.DataAccess
+namespace Concrete.InMemory
 {
     public class InMemoryCarDal : ICarDal
     {
@@ -29,17 +31,18 @@ namespace ReCapProject.DataAccess
 
         public void Delete(Car car)
         {
+            Car carToDelete = _cars.SingleOrDefault(c => c.Id == car.Id);
             _cars.Remove(car);
         }
 
-        public List<Car> GetAll()
+        public Car Get(Expression<Func<Car, bool>> filter)
         {
-            return _cars;
+            throw new NotImplementedException();
         }
 
-        public Car GetById(int id)
+        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
         {
-            return _cars.Where(c => c.Id == id).FirstOrDefault();
+            return _cars;
         }
 
         public void Update(Car car)

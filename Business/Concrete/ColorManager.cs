@@ -22,9 +22,9 @@ namespace Business.Concrete
             return _colorDal.GetAll();
         }
 
-        public List<Color> GetAllByColorName(string colorName)
+        public Color GetById(int id)
         {
-            return _colorDal.GetAll(c => c.Name == colorName);
+            return _colorDal.Get(c => c.Id == id);
         }
     }
 }

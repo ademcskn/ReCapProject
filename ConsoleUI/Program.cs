@@ -11,7 +11,7 @@ namespace ReCapProject.ConsoleUI
         {
             CarManager carManager = new CarManager(new EfCarDal());
 
-            foreach (var car in carManager.GetAll())
+            foreach (var car in carManager.GetByDailyPrice(120,180))
             {
                 Console.WriteLine(car.Description);
             }

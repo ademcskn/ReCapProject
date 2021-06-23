@@ -24,7 +24,7 @@ namespace ReCapProject.ConsoleUI
             }
 
 
-            foreach (var color in colorManager.GetAllByColorName("White"))
+            foreach (var color in colorManager.GetAllByColorName("Black"))
             {
                 Console.WriteLine(color.Name);
             }

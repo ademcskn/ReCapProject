@@ -17,6 +17,19 @@ namespace Business.Concrete
         {
             _carDal = carDal;
         }
+
+        public void Add(Car car)
+        {
+            if (car.Name.Length > 2 && car.DailyPrice > 0)
+            {
+                _carDal.Add(car);
+            }
+            else
+            {
+                Console.WriteLine("Eklenemedi");
+            }
+        }
+
         public List<Car> GetAll()
         {
             return _carDal.GetAll();

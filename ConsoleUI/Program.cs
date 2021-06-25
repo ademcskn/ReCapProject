@@ -143,7 +143,7 @@ namespace ReCapProject.ConsoleUI
         {
             CarManager carManager = new CarManager(new EfCarDal());
             carManager.Add(new Car { Id = 5, BrandId = 5, ColorId = 3, DailyPrice = 249, Description = "Peugeot Minibüs", Name = "Peugeot Minibüs" });
-            foreach (var car in carManager.GetAll())
+            foreach (var car in carManager.GetAll().Data)
             {
                 Console.WriteLine(car.Name);
             }
@@ -152,7 +152,7 @@ namespace ReCapProject.ConsoleUI
         {
             CarManager carManager = new CarManager(new EfCarDal());
             carManager.Update(new Car { Id = 5, Name = "BMW", Description = "BMW 5.20", DailyPrice = 300 });
-            foreach (var brand in carManager.GetAll())
+            foreach (var brand in carManager.GetAll().Data)
             {
                 Console.WriteLine(brand.Name);
             }
@@ -161,7 +161,7 @@ namespace ReCapProject.ConsoleUI
         {
             CarManager carManager = new CarManager(new EfCarDal());
             carManager.Delete(new Car { Id = 5 });
-            foreach (var car in carManager.GetAll())
+            foreach (var car in carManager.GetAll().Data)
             {
                 Console.WriteLine(car.Name);
             }
@@ -170,7 +170,7 @@ namespace ReCapProject.ConsoleUI
         {
             CarManager carManager = new CarManager(new EfCarDal());
 
-            foreach (var car in carManager.GetAll())
+            foreach (var car in carManager.GetAll().Data)
             {
                 Console.Write(car.Name);
             }
@@ -178,16 +178,25 @@ namespace ReCapProject.ConsoleUI
         private static void CarGetById()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            var result = carManager.GetById(1);
+            var result = carManager.GetById(1).Data;
             Console.WriteLine(result.Name);
         }
         private static void GetCarDetails()
         {
             CarManager carManager = new CarManager(new EfCarDal());
 
-            foreach (var car in carManager.GetCarDetails())
+            var result = carManager.GetCarDetails();
+
+            if (result.Success)
             {
-                Console.WriteLine("{0} / {1} / {2} / {3}", car.CarName, car.BrandName, car.ColorName, car.DailyPrice);
+                foreach (var car in result.Data)
+                {
+                    Console.WriteLine("{0} / {1} / {2} / {3}", car.CarName, car.BrandName, car.ColorName, car.DailyPrice);
+                }
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
             }
         }
     }

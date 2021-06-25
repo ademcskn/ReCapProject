@@ -10,22 +10,74 @@ namespace ReCapProject.ConsoleUI
     {
         static void Main(string[] args)
         {
-            //CarTest();
+            //ColorAdd();
 
-            //ColorTest();
+            //ColorUpdate();
+
+            //ColorDelete();
+
+            //ColorsGetAll();
+
+            //ColorGetById();
+
+
+
+            //BrandAdd();
+
+            //BrandUpdate();
+
+            //BrandDelete();
+
+            //BrandsGetAll();
+
+            //BrandGetById();
+
+
 
             //CarAdd();
+
+            //CarUpdate();
+
+            //CarDelete();
+
+            //CarsGetAll();
+
+            //CarGetById();
+
+            GetCarDetails();
 
             Console.ReadLine();
         }
 
-        private static void CarAdd()
-        {
-            CarManager carManager = new CarManager(new EfCarDal());
-            carManager.Add(new Car { Id = 5, BrandId = 1, ColorId = 2, DailyPrice = 149, Description = "Citroen Sedan", Name = "Citroen Berlingo" });
-        }
 
-        private static void ColorTest()
+        private static void ColorAdd()
+        {
+            ColorManager colorManager = new ColorManager(new EfColorDal());
+            colorManager.Add(new Color { Id = 5, Name = "Green" });
+            foreach (var color in colorManager.GetAll())
+            {
+                Console.WriteLine(color.Name);
+            }
+        }
+        private static void ColorUpdate()
+        {
+            ColorManager colorManager = new ColorManager(new EfColorDal());
+            colorManager.Update(new Color { Id = 5, Name = "Dark Black" });
+            foreach (var color in colorManager.GetAll())
+            {
+                Console.WriteLine(color.Name);
+            }
+        }
+        private static void ColorDelete()
+        {
+            ColorManager colorManager = new ColorManager(new EfColorDal());
+            colorManager.Delete(new Color { Id = 5 });
+            foreach (var color in colorManager.GetAll())
+            {
+                Console.WriteLine(color.Name);
+            }
+        }
+        private static void ColorsGetAll()
         {
             ColorManager colorManager = new ColorManager(new EfColorDal());
 
@@ -34,13 +86,108 @@ namespace ReCapProject.ConsoleUI
                 Console.WriteLine(color.Name);
             }
         }
+        private static void ColorGetById()
+        {
+            ColorManager colorManager = new ColorManager(new EfColorDal());
+            var result = colorManager.GetById(1);
+            Console.WriteLine(result.Name);
+        }
 
-        private static void CarTest()
+
+
+        private static void BrandAdd()
+        {
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            brandManager.Add(new Brand { Id = 5, Name = "Peugeot" });
+            foreach (var brand in brandManager.GetAll())
+            {
+                Console.WriteLine(brand.Id + "/" + brand.Name);
+            }
+        }
+        private static void BrandUpdate()
+        {
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            brandManager.Update(new Brand { Id = 5, Name = "BMW" });
+            foreach (var brand in brandManager.GetAll())
+            {
+                Console.WriteLine(brand.Name);
+            }
+        }
+        private static void BrandDelete()
+        {
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            brandManager.Delete(new Brand { Id = 5 });
+            foreach (var brand in brandManager.GetAll())
+            {
+                Console.WriteLine(brand.Name);
+            }
+        }
+        private static void BrandsGetAll()
+        {
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+
+            foreach (var color in brandManager.GetAll())
+            {
+                Console.WriteLine(color.Name);
+            }
+        }
+        private static void BrandGetById()
+        {
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            var result = brandManager.GetById(1);
+            Console.WriteLine(result.Name);
+        }
+
+
+        private static void CarAdd()
         {
             CarManager carManager = new CarManager(new EfCarDal());
+            carManager.Add(new Car { Id = 5, BrandId = 5, ColorId = 3, DailyPrice = 249, Description = "Peugeot Minibüs", Name = "Peugeot Minibüs" });
+            foreach (var car in carManager.GetAll())
+            {
+                Console.WriteLine(car.Name);
+            }
+        }
+        private static void CarUpdate()
+        {
+            CarManager carManager = new CarManager(new EfCarDal());
+            carManager.Update(new Car { Id = 5, Name = "BMW", Description = "BMW 5.20", DailyPrice = 300 });
+            foreach (var brand in carManager.GetAll())
+            {
+                Console.WriteLine(brand.Name);
+            }
+        }
+        private static void CarDelete()
+        {
+            CarManager carManager = new CarManager(new EfCarDal());
+            carManager.Delete(new Car { Id = 5 });
+            foreach (var car in carManager.GetAll())
+            {
+                Console.WriteLine(car.Name);
+            }
+        }
+        private static void CarsGetAll()
+        {
+            CarManager carManager = new CarManager(new EfCarDal());
+
+            foreach (var car in carManager.GetAll())
+            {
+                Console.Write(car.Name);
+            }
+        }
+        private static void CarGetById()
+        {
+            CarManager carManager = new CarManager(new EfCarDal());
+            var result = carManager.GetById(1);
+            Console.WriteLine(result.Name);
+        }
+        private static void GetCarDetails()
+        {
+            CarManager carManager = new CarManager(new EfCarDal());
+
             foreach (var car in carManager.GetCarDetails())
             {
-                Console.WriteLine(car.Description + "/" + car.ColorName);
+                Console.WriteLine("{0} / {1} / {2} / {3}", car.CarName, car.BrandName, car.ColorName, car.DailyPrice);
             }
         }
     }

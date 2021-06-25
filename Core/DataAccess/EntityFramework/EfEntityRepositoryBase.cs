@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace Core.DataAccess.EntityFramework
 {
-    public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity> 
-                                            where TEntity : class, IEntity, new() 
+    public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity>
+                                            where TEntity : class, IEntity, new()
                                             where TContext : DbContext, new()
     {
         public void Add(TEntity entity)
@@ -20,7 +20,7 @@ namespace Core.DataAccess.EntityFramework
                 var addedEntity = context.Entry(entity); //ref yakalama
                 addedEntity.State = EntityState.Added;
                 context.SaveChanges();
-            } 
+            }
         }
 
         public void Delete(TEntity entity)
@@ -29,6 +29,15 @@ namespace Core.DataAccess.EntityFramework
             {
                 var deleteEntity = context.Entry(entity);
                 deleteEntity.State = EntityState.Deleted;
+                context.SaveChanges();
+            }
+        }
+        public void Update(TEntity entity)
+        {
+            using (TContext context = new TContext())
+            {
+                var updatedEntity = context.Entry(entity);
+                updatedEntity.State = EntityState.Modified;
                 context.SaveChanges();
             }
         }
@@ -46,16 +55,6 @@ namespace Core.DataAccess.EntityFramework
             using (TContext context = new TContext())
             {
                 return filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList();
-            }
-        }
-
-        public void Update(TEntity entity)
-        {
-            using (TContext context = new TContext())
-            {
-                var updatedEntity = context.Entry(entity);
-                updatedEntity.State = EntityState.Modified;
-                context.SaveChanges();
             }
         }
     }

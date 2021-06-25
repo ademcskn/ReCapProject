@@ -30,19 +30,32 @@ namespace Business.Concrete
             }
         }
 
+        public void Delete(Car car)
+        {
+            _carDal.Delete(car);
+        }
+        public void Update(Car car)
+        {
+            _carDal.Update(car);
+        }
+
         public List<Car> GetAll()
         {
             return _carDal.GetAll();
         }
-
-        public List<Car> GetAllByBrandId(int id)
+        public Car GetById(int carId)
         {
-            return _carDal.GetAll(c => c.BrandId == id);
+            return _carDal.Get(c => c.Id == carId);
         }
 
-        public List<Car> GetAllByColorId(int id)
+        public List<Car> GetAllByBrandId(int brandId)
         {
-            return _carDal.GetAll(c => c.ColorId == id);
+            return _carDal.GetAll(c => c.BrandId == brandId);
+        }
+
+        public List<Car> GetAllByColorId(int colorId)
+        {
+            return _carDal.GetAll(c => c.ColorId == colorId);
         }
 
         public List<Car> GetAllByDescription(string desc)

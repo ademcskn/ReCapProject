@@ -40,11 +40,11 @@ namespace ReCapProject.ConsoleUI
 
             //CarDelete();
 
-            //CarsGetAll();
+            CarsGetAll();
 
             //CarGetById();
 
-            GetCarDetails();
+            //GetCarDetails();
 
             Console.ReadLine();
         }
@@ -54,7 +54,7 @@ namespace ReCapProject.ConsoleUI
         {
             ColorManager colorManager = new ColorManager(new EfColorDal());
             colorManager.Add(new Color { Id = 5, Name = "Green" });
-            foreach (var color in colorManager.GetAll())
+            foreach (var color in colorManager.GetAll().Data)
             {
                 Console.WriteLine(color.Name);
             }
@@ -63,7 +63,7 @@ namespace ReCapProject.ConsoleUI
         {
             ColorManager colorManager = new ColorManager(new EfColorDal());
             colorManager.Update(new Color { Id = 5, Name = "Dark Black" });
-            foreach (var color in colorManager.GetAll())
+            foreach (var color in colorManager.GetAll().Data)
             {
                 Console.WriteLine(color.Name);
             }
@@ -72,7 +72,7 @@ namespace ReCapProject.ConsoleUI
         {
             ColorManager colorManager = new ColorManager(new EfColorDal());
             colorManager.Delete(new Color { Id = 5 });
-            foreach (var color in colorManager.GetAll())
+            foreach (var color in colorManager.GetAll().Data)
             {
                 Console.WriteLine(color.Name);
             }
@@ -81,7 +81,7 @@ namespace ReCapProject.ConsoleUI
         {
             ColorManager colorManager = new ColorManager(new EfColorDal());
 
-            foreach (var color in colorManager.GetAll())
+            foreach (var color in colorManager.GetAll().Data)
             {
                 Console.WriteLine(color.Name);
             }
@@ -89,7 +89,7 @@ namespace ReCapProject.ConsoleUI
         private static void ColorGetById()
         {
             ColorManager colorManager = new ColorManager(new EfColorDal());
-            var result = colorManager.GetById(1);
+            var result = colorManager.GetById(1).Data;
             Console.WriteLine(result.Name);
         }
 
@@ -99,7 +99,7 @@ namespace ReCapProject.ConsoleUI
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
             brandManager.Add(new Brand { Id = 5, Name = "Peugeot" });
-            foreach (var brand in brandManager.GetAll())
+            foreach (var brand in brandManager.GetAll().Data)
             {
                 Console.WriteLine(brand.Id + "/" + brand.Name);
             }
@@ -108,7 +108,7 @@ namespace ReCapProject.ConsoleUI
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
             brandManager.Update(new Brand { Id = 5, Name = "BMW" });
-            foreach (var brand in brandManager.GetAll())
+            foreach (var brand in brandManager.GetAll().Data)
             {
                 Console.WriteLine(brand.Name);
             }
@@ -117,7 +117,7 @@ namespace ReCapProject.ConsoleUI
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
             brandManager.Delete(new Brand { Id = 5 });
-            foreach (var brand in brandManager.GetAll())
+            foreach (var brand in brandManager.GetAll().Data)
             {
                 Console.WriteLine(brand.Name);
             }
@@ -126,7 +126,7 @@ namespace ReCapProject.ConsoleUI
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
 
-            foreach (var color in brandManager.GetAll())
+            foreach (var color in brandManager.GetAll().Data)
             {
                 Console.WriteLine(color.Name);
             }
@@ -134,7 +134,7 @@ namespace ReCapProject.ConsoleUI
         private static void BrandGetById()
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
-            var result = brandManager.GetById(1);
+            var result = brandManager.GetById(1).Data;
             Console.WriteLine(result.Name);
         }
 
@@ -170,10 +170,14 @@ namespace ReCapProject.ConsoleUI
         {
             CarManager carManager = new CarManager(new EfCarDal());
 
-            foreach (var car in carManager.GetAll().Data)
+            var result = carManager.GetAll();
+
+            foreach (var car in result.Data)
             {
-                Console.Write(car.Name);
+                Console.WriteLine(car.Name);
             }
+            Console.WriteLine();
+            Console.WriteLine(result.Message);
         }
         private static void CarGetById()
         {

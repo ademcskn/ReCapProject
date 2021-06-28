@@ -40,14 +40,29 @@ namespace ReCapProject.ConsoleUI
 
             //CarDelete();
 
-            CarsGetAll();
+            //CarsGetAll();
 
             //CarGetById();
 
             //GetCarDetails();
 
+            RentalsGetAll();
+
             Console.ReadLine();
         }
+
+        private static void RentalsGetAll()
+        {
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            foreach (var rental in rentalManager.GetAll().Data)
+            {
+                Console.WriteLine(rental.RentData);
+            }
+
+        }
+
+
+        #region ColorMethods
 
 
         private static void ColorAdd()
@@ -93,7 +108,9 @@ namespace ReCapProject.ConsoleUI
             Console.WriteLine(result.Name);
         }
 
+        #endregion
 
+        #region BrandMethods
 
         private static void BrandAdd()
         {
@@ -137,7 +154,9 @@ namespace ReCapProject.ConsoleUI
             var result = brandManager.GetById(1).Data;
             Console.WriteLine(result.Name);
         }
+        #endregion
 
+        #region CarMethods
 
         private static void CarAdd()
         {
@@ -203,5 +222,9 @@ namespace ReCapProject.ConsoleUI
                 Console.WriteLine(result.Message);
             }
         }
+        #endregion
+
+
+
     }
 }

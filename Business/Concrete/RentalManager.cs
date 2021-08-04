@@ -1,7 +1,10 @@
 ﻿using Business.Abstract;
+using Business.ValidationRules.FleuntValidation;
+using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,12 +24,10 @@ namespace Business.Concrete
 
         public IResult Add(Rental rental)
         {
-            if (rental.ReturnDate == null)
-            {
-                _rentalDal.Add(rental);
-                return new SuccessResult();
-            }
-            return new ErrorResult("Araç dolu");
+            ValidationTool.Validate(new RentalValidator(), rental);
+
+            _rentalDal.Add(rental);
+            return new SuccessResult();
         }
 
         public IResult Delete(Rental rental)

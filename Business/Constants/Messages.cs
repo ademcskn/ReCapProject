@@ -16,5 +16,6 @@ namespace Business.Constants
         public static string ProductListed = "Ürün Listelendi";
         public static string ProductUpdated = "Ürün Güncellendi";
         public static string Deleted ="Silme başarılı";
+        public static string VecihleError = "Araç Dolu";
     }
 }

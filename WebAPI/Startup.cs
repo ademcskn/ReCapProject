@@ -53,6 +53,9 @@ namespace WebAPI
             services.AddSingleton<ICustomerService, CustomerManager>();
             services.AddSingleton<ICustomerDal, EfCustomerDal>();
 
+            services.AddSingleton<ICarImageService, CarImageManager>();
+            services.AddSingleton<ICarImageDal, EfCarImageDal>();
+
             #endregion
 
             services.AddSwaggerGen(c =>

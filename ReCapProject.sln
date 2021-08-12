@@ -13,7 +13,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleUI", "ConsoleUI\Cons
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{7379E218-622F-462C-AEB3-50DEEE16BAC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{57C2CA82-3398-4C58-86B4-7A95436D666D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI\WebAPI.csproj", "{57C2CA82-3398-4C58-86B4-7A95436D666D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Uploads", "Uploads", "{522BFFF1-3259-4819-BC6B-FBFA7173D412}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{2B67B011-2749-42C7-A44E-8907DA2AB5CD}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\default.png = ..\..\..\Desktop\default.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +55,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2B67B011-2749-42C7-A44E-8907DA2AB5CD} = {522BFFF1-3259-4819-BC6B-FBFA7173D412}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E20B793D-7988-4DE6-AEDA-145634AC2D81}

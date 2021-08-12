@@ -17,5 +17,7 @@ namespace Business.Constants
         public static string ProductUpdated = "Ürün Güncellendi";
         public static string Deleted ="Silme başarılı";
         public static string VecihleError = "Araç Dolu";
+
+        public static string CarImageLimitExceeded { get; internal set; }
     }
 }

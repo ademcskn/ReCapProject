@@ -229,7 +229,7 @@ namespace ReCapProject.ConsoleUI
         private static void RentalAdd()
         {
             RentalManager rentalManager = new RentalManager(new EfRentalDal());
-            rentalManager.Add(new Rental { Id = 1, CarId = 1, CustomerId = 1, RentDate = DateTime.Now,ReturnDate = DateTime.Now.AddDays(2)});
+            rentalManager.Add(new Rental { Id = 1, CarId = 1, CustomerId = 1, RentDate = DateTime.Now, ReturnDate = DateTime.Now.AddDays(2) });
         }
 
         #endregion

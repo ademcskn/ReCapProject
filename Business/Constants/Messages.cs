@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,9 +16,11 @@ namespace Business.Constants
         public static string ProductsListed = "Ürünler Listelendi";
         public static string ProductListed = "Ürün Listelendi";
         public static string ProductUpdated = "Ürün Güncellendi";
-        public static string Deleted ="Silme başarılı";
+        public static string Deleted = "Silme başarılı";
         public static string VecihleError = "Araç Dolu";
+        public static string CarImageLimitExceeded = "Araç Fotoğraf Sayısı Aşıldı.";
+        public static string AuthorizationDenied = "Yetkiniz yok!";
 
-        public static string CarImageLimitExceeded { get; internal set; }
+        public static string CarImagesCountError { get; internal set; }
     }
 }

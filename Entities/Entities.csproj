@@ -5,6 +5,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="bin\**" />
+    <Compile Remove="obj\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="bin\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Concrete\Brand.cs" />
+    <Compile Include="Concrete\Car.cs" />
+    <Compile Include="Concrete\CarImage.cs" />
+    <Compile Include="Concrete\Color.cs" />
+    <Compile Include="Concrete\Customer.cs" />
+    <Compile Include="Concrete\Rental.cs" />
+    <Compile Include="Concrete\User.cs" />
+    <Compile Include="DTOs\CarDetailDto.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Abstract\" />
   </ItemGroup>
 

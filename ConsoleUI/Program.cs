@@ -3,6 +3,7 @@ using Concrete.InMemory;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
+using System.Linq;
 
 namespace ReCapProject.ConsoleUI
 {
@@ -10,6 +11,7 @@ namespace ReCapProject.ConsoleUI
     {
         static void Main(string[] args)
         {
+            #region ColorMethods
             //ColorAdd();
 
             //ColorUpdate();
@@ -19,9 +21,9 @@ namespace ReCapProject.ConsoleUI
             //ColorsGetAll();
 
             //ColorGetById();
+            #endregion
 
-
-
+            #region BrandMethods
             //BrandAdd();
 
             //BrandUpdate();
@@ -31,9 +33,9 @@ namespace ReCapProject.ConsoleUI
             //BrandsGetAll();
 
             //BrandGetById();
+            #endregion
 
-
-
+            #region CarMethods
             //CarAdd();
 
             //CarUpdate();
@@ -45,22 +47,16 @@ namespace ReCapProject.ConsoleUI
             //CarGetById();
 
             //GetCarDetails();
+            #endregion
 
-            RentalsGetAll();
+            #region RentalMethods
+            //RentalAdd();
+
+            //RentalsGetAll();
+            #endregion
 
             Console.ReadLine();
         }
-
-        private static void RentalsGetAll()
-        {
-            RentalManager rentalManager = new RentalManager(new EfRentalDal());
-            foreach (var rental in rentalManager.GetAll().Data)
-            {
-                Console.WriteLine(rental.RentDate);
-            }
-
-        }
-
 
         #region ColorMethods
 
@@ -77,7 +73,7 @@ namespace ReCapProject.ConsoleUI
         private static void ColorUpdate()
         {
             ColorManager colorManager = new ColorManager(new EfColorDal());
-            colorManager.Update(new Color { Id = 5, Name = "Dark Black" });
+            colorManager.Update(new Color { Id = 5, Name = "Dark Green" });
             foreach (var color in colorManager.GetAll().Data)
             {
                 Console.WriteLine(color.Name);
@@ -157,7 +153,6 @@ namespace ReCapProject.ConsoleUI
         #endregion
 
         #region CarMethods
-
         private static void CarAdd()
         {
             CarManager carManager = new CarManager(new EfCarDal());
@@ -230,9 +225,23 @@ namespace ReCapProject.ConsoleUI
         {
             RentalManager rentalManager = new RentalManager(new EfRentalDal());
             rentalManager.Add(new Rental { Id = 1, CarId = 1, CustomerId = 1, RentDate = DateTime.Now, ReturnDate = DateTime.Now.AddDays(2) });
+            foreach (var rental in rentalManager.GetAll().Data)
+            {
+                Console.WriteLine(rental.CarId);
+            }
+        }
+
+        private static void RentalsGetAll()
+        {
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            var result = rentalManager.GetAll();
+
+            foreach (var rental in result.Data)
+            {
+                Console.WriteLine(rental.Id + " - " + rental.RentDate);
+            }
         }
 
         #endregion
-
     }
 }

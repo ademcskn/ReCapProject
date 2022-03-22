@@ -5,6 +5,34 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="bin\**" />
+    <Compile Remove="obj\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="bin\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Abstract\IBrandDal.cs" />
+    <Compile Include="Abstract\ICarDal.cs" />
+    <Compile Include="Abstract\ICarImageDal.cs" />
+    <Compile Include="Abstract\IColorDal.cs" />
+    <Compile Include="Abstract\ICustomerDal.cs" />
+    <Compile Include="Abstract\IRentalDal.cs" />
+    <Compile Include="Abstract\IUserDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfBrandDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCarDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCarImageDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfColorDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCustomerDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRentalDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
+    <Compile Include="Concrete\EntityFramework\ReCapProjectDbContext.cs" />
+    <Compile Include="Concrete\InMemory\InMemoryCarDal.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.8" />
   </ItemGroup>
 

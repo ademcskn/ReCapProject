@@ -5,6 +5,58 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="bin\**" />
+    <Compile Remove="obj\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="bin\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Aspects\Autofac\Caching\CacheAspect.cs" />
+    <Compile Include="Aspects\Autofac\Caching\CacheRemoveAspect.cs" />
+    <Compile Include="Aspects\Autofac\Performance\PerformanceAspect.cs" />
+    <Compile Include="Aspects\Autofac\Validation\ValidationAspect.cs" />
+    <Compile Include="CrossCuttingConcerns\Caching\ICacheManager.cs" />
+    <Compile Include="CrossCuttingConcerns\Microsoft\MemoryCacheManager.cs" />
+    <Compile Include="CrossCuttingConcerns\Validation\ValidationTool.cs" />
+    <Compile Include="DataAccess\EntityFramework\EfEntityRepositoryBase.cs" />
+    <Compile Include="DataAccess\IEntityRepository.cs" />
+    <Compile Include="DependencyResolvers\CoreModule.cs" />
+    <Compile Include="Entities\Concrete\OperationClaim.cs" />
+    <Compile Include="Entities\Concrete\User.cs" />
+    <Compile Include="Entities\Concrete\UserOperationClaim.cs" />
+    <Compile Include="Entities\IDto.cs" />
+    <Compile Include="Entities\IEntity.cs" />
+    <Compile Include="Extensions\ClaimExtensions.cs" />
+    <Compile Include="Extensions\ClaimsPrincipalExtensions.cs" />
+    <Compile Include="Extensions\ServiceCollectionExtensions.cs" />
+    <Compile Include="Utilities\BusinessRule\BusinessRule.cs" />
+    <Compile Include="Utilities\Helper\FileHelperManager.cs" />
+    <Compile Include="Utilities\Interceptors\AspectInterceptorSelector.cs" />
+    <Compile Include="Utilities\Interceptors\MethodInterception.cs" />
+    <Compile Include="Utilities\Interceptors\MethodInterceptionBaseAttribute.cs" />
+    <Compile Include="Utilities\IoC\ICoreModule.cs" />
+    <Compile Include="Utilities\IoC\ServiceTool.cs" />
+    <Compile Include="Utilities\Results\DataResult.cs" />
+    <Compile Include="Utilities\Results\ErrorDataResult.cs" />
+    <Compile Include="Utilities\Results\ErrorResult.cs" />
+    <Compile Include="Utilities\Results\IDataResult.cs" />
+    <Compile Include="Utilities\Results\IResult.cs" />
+    <Compile Include="Utilities\Results\Result.cs" />
+    <Compile Include="Utilities\Results\SuccessDataResult.cs" />
+    <Compile Include="Utilities\Results\SuccessResult.cs" />
+    <Compile Include="Utilities\Security\Encryption\SecurityKeyHelper.cs" />
+    <Compile Include="Utilities\Security\Encryption\SigningCredentialsHelper.cs" />
+    <Compile Include="Utilities\Security\Hashing\HashingHelper.cs" />
+    <Compile Include="Utilities\Security\JWT\AccessToken.cs" />
+    <Compile Include="Utilities\Security\JWT\ITokenHelper.cs" />
+    <Compile Include="Utilities\Security\JWT\JwtHelper.cs" />
+    <Compile Include="Utilities\Security\JWT\TokenOptions.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Autofac" Version="6.3.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
     <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.1" />
@@ -13,6 +65,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.8" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.16.0" />
   </ItemGroup>
 

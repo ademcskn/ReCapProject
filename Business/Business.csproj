@@ -1,9 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>8ef2c0bd-15d4-41d7-823b-53da98643119</UserSecretsId>
-    <EnableDefaultContentItems>false</EnableDefaultContentItems>
+    <!--<EnableDefaultItems>false</EnableDefaultItems>-->
+    <!--<EnableDefaultContentItems>false</EnableDefaultContentItems>-->
   </PropertyGroup>
 
   <ItemGroup>

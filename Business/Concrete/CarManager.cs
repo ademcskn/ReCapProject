@@ -1,21 +1,16 @@
-﻿using Business.Abstract;
+﻿using System;
+using Entities.Concrete;
+using Entities.DTOs; 
+using DataAccess.Abstract;
+using Business.Abstract;
 using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FleuntValidation;
 using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Performance;
-using Core.Aspects.Autofac.Validation;
-using Core.CrossCuttingConcerns.Validation;
+using Core.Aspects.Autofac.Validation; 
 using Core.Utilities.Results;
-using DataAccess.Abstract;
-using Entities.Concrete;
-using Entities.DTOs;
-using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.Generic; 
 
 namespace Business.Concrete
 {

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <!--<EnableDefaultItems>false</EnableDefaultItems>-->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <!--<EnableDefaultContentItems>false</EnableDefaultContentItems>-->
   </PropertyGroup>
 
@@ -16,6 +16,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="WebAPI.csproj.bak" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\BrandController.cs" />
+    <Compile Include="Controllers\CarController.cs" />
+    <Compile Include="Controllers\CarImageController.cs" />
+    <Compile Include="Controllers\ColorController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\RentalController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

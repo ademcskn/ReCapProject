@@ -2,9 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <!--<UserSecretsId>8ef2c0bd-15d4-41d7-823b-53da98643119</UserSecretsId>-->
-    <!--<EnableDefaultItems>false</EnableDefaultItems>-->
-    <!--<EnableDefaultContentItems>false</EnableDefaultContentItems>-->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
 
   <ItemGroup>

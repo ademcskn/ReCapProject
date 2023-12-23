@@ -2,8 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <!--<EnableDefaultItems>false</EnableDefaultItems>-->
-    <!--<EnableDefaultContentItems>false</EnableDefaultContentItems>-->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
 
   <ItemGroup>
@@ -33,6 +32,9 @@
     <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Extensions\ClaimExtensions.cs" />
     <Compile Include="Extensions\ClaimsPrincipalExtensions.cs" />
+    <Compile Include="Extensions\ErrorDetails.cs" />
+    <Compile Include="Extensions\ExceptionMiddleware.cs" />
+    <Compile Include="Extensions\ExceptionMiddlewareExtensions.cs" />
     <Compile Include="Extensions\ServiceCollectionExtensions.cs" />
     <Compile Include="Utilities\BusinessRule\BusinessRule.cs" />
     <Compile Include="Utilities\Helper\FileHelperManager.cs" />

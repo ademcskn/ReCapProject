@@ -1,1 +1,1 @@
-.Net Core araç kiralama projesi
+.Net Core project (backend)

@@ -46,7 +46,7 @@ namespace ReCapProject.ConsoleUI
 
             //CarGetById();
 
-            //GetCarDetails();
+            GetCarDetails();
             #endregion
 
             #region RentalMethods

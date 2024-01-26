@@ -19,6 +19,6 @@ namespace Core.Utilities.BusinessRule
                 }
             }
             return null;
-        }
+        }  
     }
 }

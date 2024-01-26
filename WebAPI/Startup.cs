@@ -48,7 +48,6 @@ namespace WebAPI
                     };
                 });
 
-
             #region IoC Container
             //Bu IoC yapýlandýrmasý yerine autofac modulü kullanýldý. Çünkü AutoFac ayný zamanda bize AOP desteði veriyor.
 

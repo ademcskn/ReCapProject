@@ -46,7 +46,7 @@ namespace ReCapProject.ConsoleUI
 
             //CarGetById();
 
-            GetCarDetails();
+            //GetCarDetails();
             #endregion
 
             #region RentalMethods
@@ -186,9 +186,12 @@ namespace ReCapProject.ConsoleUI
 
             var result = carManager.GetAll();
 
-            foreach (var car in result.Data)
-            {
-                Console.WriteLine(car.Name);
+            if (result.Data != null)
+            { 
+                foreach (var car in result.Data)
+                {
+                    Console.WriteLine(car.Name);
+                }
             }
             Console.WriteLine();
             Console.WriteLine(result.Message);

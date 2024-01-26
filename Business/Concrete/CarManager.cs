@@ -48,7 +48,7 @@ namespace Business.Concrete
         [PerformanceAspect(20)] // Metodun çalışması 20 saniyeyi geçerse uyarı ver.
         public IDataResult<List<Car>> GetAll()
         {
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(), Messages.ProductsListed);
+            return new SuccessDataResult<List<Car>>(Messages.ProductsListed);
         }
         [CacheAspect]
         [PerformanceAspect(5)]

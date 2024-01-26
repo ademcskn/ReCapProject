@@ -48,6 +48,7 @@ namespace WebAPI
                     };
                 });
 
+
             #region IoC Container
             //Bu IoC yapýlandýrmasý yerine autofac modulü kullanýldý. Çünkü AutoFac ayný zamanda bize AOP desteði veriyor.
 
@@ -75,6 +76,7 @@ namespace WebAPI
             #endregion
 
             services.AddDependencyResolvers(new ICoreModule[] { new CoreModule() });
+            //yukarýdaki extensions metodunu yazarak birden fazla servisi içinde "ServiceTool.Create(services)" metodunu kullanarak kullandýk.
 
             services.AddSwaggerGen(c =>
             {

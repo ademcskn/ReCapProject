@@ -1,13 +1,13 @@
-﻿using Castle.DynamicProxy;
-using Core.CrossCuttingConcerns.Caching;
-using Core.Utilities.Interceptors;
-using Core.Utilities.IoC;
-using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
 using System.Text;
+using Core.Utilities.IoC;
+using Castle.DynamicProxy;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using Core.Utilities.Interceptors;
+using Core.CrossCuttingConcerns.Caching;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Core.Aspects.Autofac.Caching
 {

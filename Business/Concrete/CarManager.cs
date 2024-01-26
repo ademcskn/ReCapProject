@@ -22,7 +22,7 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
-        [SecuredOperation("car.add,admin")]
+        //[SecuredOperation("car.add,admin")]
         [ValidationAspect(typeof(CarValidator))]
         [CacheRemoveAspect("ICarService.Get")]
         public IResult Add(Car car)
@@ -47,7 +47,7 @@ namespace Business.Concrete
         [CacheAspect]
         [PerformanceAspect(20)] // Metodun çalışması 20 saniyeyi geçerse uyarı ver.
         public IDataResult<List<Car>> GetAll()
-        {
+        { 
             return new SuccessDataResult<List<Car>>(Messages.ProductsListed);
         }
         [CacheAspect]

@@ -1,13 +1,13 @@
-﻿using Core.CrossCuttingConcerns.Caching;
-using Core.Utilities.IoC;
-using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Text;
-using System.Text.RegularExpressions;
+using System.Linq;
+using Core.Utilities.IoC;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using Microsoft.Extensions.Caching.Memory;
+using System.Text.RegularExpressions;
+using Core.CrossCuttingConcerns.Caching;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Core.CrossCuttingConcerns.Microsoft
 {

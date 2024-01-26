@@ -13,7 +13,7 @@ namespace Business.ValidationRules.FleuntValidation
         public CarValidator()
         {
             RuleFor(c => c.Name).NotEmpty();
-            RuleFor(c => c.Name).MinimumLength(2);
+            RuleFor(c => c.Name).MinimumLength(5);
             RuleFor(c => c.DailyPrice).GreaterThanOrEqualTo(0);
         }
     }
